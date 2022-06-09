@@ -1,25 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./simpleForm.css";
-import Message from "./Message";
-const SimpleForm = () => {
+
+const FormWithCustomhook = () => {
   const [forms, setforms] = useState({
     name: "",
     email: "",
+    password:""
   });
 
-  const { name, email } = forms;
+  const { name, email ,password} = forms;
 
-  useEffect(() => {
-    console.log("hey");
-  }, []);
-
-  useEffect(() => {
-    console.log("FORM");
-  }, [forms]);
-
-  useEffect(() => {
-    console.log("FORM");
-  }, [email]);
+ 
 
   const handleChangeName = ({ target }) => {
       setforms({
@@ -31,7 +22,8 @@ const SimpleForm = () => {
 
   return (
     <>
-      <h1>useEfect</h1>
+    <div className="container">
+      <h1>FormWithCustomhook</h1>
       <div className="form-group">
         <input
           type="text"
@@ -54,9 +46,22 @@ const SimpleForm = () => {
           onChange={handleChangeName}
         />
       </div>
-      {name==='123' && <Message/>}
+
+      <div className="form-group">
+        <input
+          type="password"
+          name="password"
+          className="form-control"
+          placeholder="****"
+          autoComplete="off"
+          value={password}
+          onChange={handleChangeName}
+        />
+      </div>
+    </div>
+      
     </>
   );
 };
 
-export default SimpleForm;
+export default FormWithCustomhook;

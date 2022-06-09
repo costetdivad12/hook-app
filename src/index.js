@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SimpleForm from './components/SimpleForm';
+import FormWithCustomhook from './components/FormWithCustomhook';
+// import SimpleForm from './components/SimpleForm';
 import './index.css';
 
 // import CounterApp from './components/CounterApp';
@@ -10,7 +11,7 @@ import './index.css';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   
-    <SimpleForm/>
+    <FormWithCustomhook />
   
 );
 
